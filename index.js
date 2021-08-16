@@ -9,6 +9,12 @@ const Self_Args = process.argv.slice(2)
 if(Self_Args.length == 0){
     console.log(`node index.js <url>
 Example: node index.js`)
+    process.exit()
+}
+
+if(Self_Args[0].indexOf("http") == -1){
+    console.log(`${Chalk.grey("[") + Chalk.redBright("ERROR") + Chalk.grey("]")} Invalid url.`)
+    process.exit()
 }
 
 console.log(`${Chalk.grey("[") + Chalk.blueBright("INFO") + Chalk.grey("]")} Scanning the website for javascript files, please wait.`)
